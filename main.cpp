@@ -6,13 +6,13 @@
 #include <iomanip>
 #include "sorting_algorithms.hpp"
 
-#define NO_OF_ELEMENTS_SIZE 5
+#define NO_OF_ELEMENTS_SIZE 7
 
 double test_sorting_algorithm(void (&sort_function)(std::vector<int> &, int, int), int elements);
 std::vector<int> generate_vector(int elements);
 void run();
 
-const int noOfElements[] = { 100, 1000, 10000, 50000, 100000 };
+const int noOfElements[] = { 10000, 50000, 100000, 500000, 1000000, 5000000, 10000000 };
 
 int main()
 {
@@ -30,6 +30,7 @@ double test_sorting_algorithm(void (&sort_function)(std::vector<int> &, int, int
 
     duration = (std::clock() - start) / (double) CLOCKS_PER_SEC;
 
+    std::vector<int>().swap(array);
     return duration;
 }
 
